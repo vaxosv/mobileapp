@@ -1,1 +1,10 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" end side="right">
+  <ion-content>
+    <ion-list>
+      <p full ion-button color="light">all item</p>
+      <p ion-button full menuClose color="light">Close Menu</p>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>
