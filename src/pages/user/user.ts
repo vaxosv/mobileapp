@@ -24,4 +24,9 @@ export class UserPage {
     console.log('ionViewDidLoad UserPage');
   }
 
+  goback() {
+    this.navCtrl.pop();
+    console.log('Click on button Test Console Log');
+  }
+
 }
