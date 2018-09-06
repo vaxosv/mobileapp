@@ -14,4 +14,8 @@ export class FetchdataProvider {
     console.log('Hello FetchdataProvider Provider');
   }
 
+  getD() {
+    return this.http.get("https://jsonplaceholder.typicode.com/posts");
+  }
+
 }

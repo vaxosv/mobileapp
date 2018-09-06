@@ -4,7 +4,7 @@
       login
     </ion-title>
   </ion-navbar>
-  
+
 </ion-header>
 
 <ion-content padding>
@@ -23,8 +23,13 @@
       <ion-label>remember password</ion-label>
       <ion-checkbox color="blue" checked="false"></ion-checkbox>
     </ion-item>
-    <button ion-button full (click)="login($event)">login</button>
+    <button ion-button full (click)="login()">login</button>
   </ion-list>
 
   <button ion-button full (click)="goto()">goto user</button>
+  <ion-list>
+    <button ion-item *ngFor="let item of data">
+      {{ item.title }}
+    </button>
+  </ion-list>
 </ion-content>
