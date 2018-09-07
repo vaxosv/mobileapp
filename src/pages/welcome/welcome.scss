@@ -1,0 +1,29 @@
+page-welcome {
+  .fixed-content {
+    background: #d0e4f7;
+    background: -moz-linear-gradient(top, #d0e4f7 0%, #0a77d5 0%, #87bcea 100%);
+    background: -webkit-linear-gradient(top, #d0e4f7 0%, #0a77d5 0%, #87bcea 100%);
+    background: linear-gradient(to bottom, #d0e4f7 0%, #0a77d5 0%, #87bcea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0e4f7', endColorstr='#87bcea', GradientType=0);
+  }
+
+  .header {
+    margin-top: 30%;
+    color: white;
+
+    h1 {
+      font-size: 40PX;
+    }
+
+    h3 {
+      padding-left: 5px;
+    }
+  }
+
+  .buttons {
+    margin-top: 40%;
+    button{
+        margin-top: 10px;
+    }
+  }
+}

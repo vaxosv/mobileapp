@@ -14,9 +14,13 @@ export class HomePage {
 
   }
 
-  login($event) {
-    console.log($event);
-
+  login() {
+    // this.serverdata.getD()
+    //   .subscribe((aa) => {
+    //     this.data = aa;
+    //     this.data.splice(10, 100)
+    //     console.log(this.data);
+    //   })
   }
 
   goto() {

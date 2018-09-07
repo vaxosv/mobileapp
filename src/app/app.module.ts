@@ -9,12 +9,16 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FetchdataProvider } from '../providers/fetchdata/fetchdata';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    UserPage
+    UserPage,
+    WelcomePage,
+    SignUpFormPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    UserPage
+    UserPage,
+    WelcomePage,
+    SignUpFormPage
   ],
   providers: [
     StatusBar,
