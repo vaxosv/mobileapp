@@ -11,6 +11,8 @@ import { FetchdataProvider } from '../providers/fetchdata/fetchdata';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
+import { PostsComponent } from '../components/posts/posts';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
     HomePage,
     UserPage,
     WelcomePage,
-    SignUpFormPage
+    SignUpFormPage,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +35,7 @@ import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
     HomePage,
     UserPage,
     WelcomePage,
-    SignUpFormPage
+    SignUpFormPage,
   ],
   providers: [
     StatusBar,

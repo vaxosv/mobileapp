@@ -16,7 +16,10 @@ import { HomePage } from '../home/home';
 })
 export class SignUpFormPage {
 
+  
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
@@ -24,6 +27,12 @@ export class SignUpFormPage {
   }
 
   register(){
-    this.navCtrl.push(HomePage)
+    // this.navCtrl.push(HomePage)
+  }
+
+  log(e){
+    console.log(e);
+    console.log('dadas');
+    
   }
 }

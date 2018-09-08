@@ -14,18 +14,47 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-input type="email" placeholder="username"></ion-input>
+  <ion-item>  
+    <ion-input
+    minlength="3"
+    required
+    type="text"
+    ngModel
+    #user="ngModel"
+    (keyup)="log(user)"
+    name="username"
+    placeholder="username"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="email" placeholder="Email Input"></ion-input>
+    <ion-input
+    #email="ngModel"
+    required
+    type="email" 
+    ngModel 
+    name="email" 
+    placeholder="Email Input"
+    ></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Password"></ion-input>
+    <ion-input
+    minlength="3"
+    required
+    type="password" 
+    ngModel 
+    name="password" 
+    placeholder="Password"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Repeate Password"></ion-input>
+    <div>password incorect</div>
+    <ion-input
+    required
+    type="password" 
+    ngModel 
+    name="password2" 
+    placeholder="Repeate Password"></ion-input>
   </ion-item>
+  <h4 *ngIf="!user.valid && user.touched">user not valid</h4>
+  <h4 *ngIf="!email.valid && email.touched">email not valid</h4>
   <button ion-button full (click)="register()" id="button">register</button>
 
 </ion-content>

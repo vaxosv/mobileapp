@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user.html',
 })
 export class UserPage {
-
+  likestatus:boolean = false;
   public me:String = "vaxo"
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -24,9 +24,6 @@ export class UserPage {
     console.log('ionViewDidLoad UserPage');
   }
 
-  goback() {
-    this.navCtrl.pop();
-    console.log('Click on button Test Console Log');
-  }
+
 
 }
