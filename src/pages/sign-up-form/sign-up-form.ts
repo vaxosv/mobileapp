@@ -35,4 +35,8 @@ export class SignUpFormPage {
     console.log('dadas');
     
   }
+  submit(f){
+    console.log(f.value);
+    
+  }
 }
