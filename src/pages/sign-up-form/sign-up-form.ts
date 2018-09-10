@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { SignUpProvider } from '../../providers/sign-up/sign-up';
+import { User } from '../../components/user/user';
 
 /**
  * Generated class for the SignUpFormPage page.
@@ -17,7 +18,7 @@ import { SignUpProvider } from '../../providers/sign-up/sign-up';
 })
 export class SignUpFormPage {
   private user;
-  
+  public button :boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public signup: SignUpProvider) {
     
@@ -35,12 +36,26 @@ export class SignUpFormPage {
     console.log('dadas');
     
   }
-  submit(f){
 
-    if (f.value.password !== f.value.password2) {
-      console.log('error password did not metch');
+  pascheck(f){
+    let pas1 = f.value.password
+    let pas2 = f.value.password2
+    console.log(f);
+    
+    if (pas1 === "" || pas1 !== pas2) {
+      this.button = false;
+    }else{
+      this.button = true;
       
     }
+    console.log(f.control.controls.password2.valid);
+    
+  }
+
+  submit(f){
+    console.log(this.button);
+    
+    
     this.user = new User(
       f.value.username,
       f.value.email,
@@ -49,18 +64,8 @@ export class SignUpFormPage {
 
     this.signup.sendata(this.user)
 
-    console.log(f.value);
     
   }
 }
 
 
-class User {
-  constructor(
-    public username: number,
-    public email: string,
-    public password: string,
-  ) {
-    
-  }
-}

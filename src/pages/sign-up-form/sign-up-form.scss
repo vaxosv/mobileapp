@@ -1,5 +1,11 @@
 page-sign-up-form {
-    #button{
-        margin-top: 40px;
-    }
+  #button {
+    margin-top: 40px;
+  }
+
+  .invalid {
+    border-bottom-color: #f53d3d !important;
+    -webkit-box-shadow: inset 0 -1px 0 0 #f53d3d !important;
+    box-shadow: inset 0 -1px 0 0 #f53d3d !important;
+  }
 }

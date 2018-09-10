@@ -6,7 +6,7 @@
 
 </ion-header>
 
-  <form padding #f="ngForm" (ngSubmit)="submit(f)">
+<form padding #f="ngForm" (ngSubmit)="submit(f)" (keyup)="pascheck(f)">
     <ion-item>  
       <ion-input
       minlength="3"
@@ -43,7 +43,8 @@
       minlength="3"
       required
       type="password" 
-      ngModel 
+      ngModel
+      [class.ng-invalid]="button"
       name="password" 
       placeholder="Password"></ion-input>
     </ion-item>
@@ -52,12 +53,14 @@
       <ion-input
       required
       type="password" 
-      ngModel 
-      name="password2" 
+      ngModel
+      #pass2
+      [class.invalid]="button"
+      name="password2"
       placeholder="Repeate Password"></ion-input>
     </ion-item>
     <!-- <h4 *ngIf="!user.valid && user.touched">user not valid</h4> -->
     <!-- <h4 *ngIf="!email.valid && email.touched">email not valid</h4>s -->
-    <button ion-button full (click)="register()" [disabled]="!f.valid" id="button">register</button>
+  <button ion-button full (click)="register()" [disabled]="!f.valid && !button" id="button">register</button>
 
   </form>
