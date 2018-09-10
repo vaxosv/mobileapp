@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { SignUpProvider } from '../../providers/sign-up/sign-up';
 
 /**
  * Generated class for the SignUpFormPage page.
@@ -15,15 +16,14 @@ import { HomePage } from '../home/home';
   templateUrl: 'sign-up-form.html',
 })
 export class SignUpFormPage {
-
+  private user;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public signup: SignUpProvider) {
     
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SignUpFormPage');
   }
 
   register(){
@@ -36,7 +36,31 @@ export class SignUpFormPage {
     
   }
   submit(f){
+
+    if (f.value.password !== f.value.password2) {
+      console.log('error password did not metch');
+      
+    }
+    this.user = new User(
+      f.value.username,
+      f.value.email,
+      f.value.password
+    )
+
+    this.signup.sendata(this.user)
+
     console.log(f.value);
+    
+  }
+}
+
+
+class User {
+  constructor(
+    public username: number,
+    public email: string,
+    public password: string,
+  ) {
     
   }
 }

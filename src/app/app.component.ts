@@ -19,7 +19,7 @@ export class MyApp {
       if (this.loggdin) {
         this.rootPage = UserPage;
       } else {
-        this.rootPage = WelcomePage;
+        this.rootPage = SignUpFormPage;
       }
       statusBar.styleDefault();
       splashScreen.hide();

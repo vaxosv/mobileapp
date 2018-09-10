@@ -13,6 +13,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
 import { PostsComponent } from '../components/posts/posts';
 import { FormsModule } from '@angular/forms';
+import { SignUpProvider } from '../providers/sign-up/sign-up';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FetchdataProvider,
+    SignUpProvider
   ]
 })
 export class AppModule {}
