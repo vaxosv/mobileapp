@@ -6,61 +6,41 @@
 
 </ion-header>
 
-<form padding #f="ngForm" (ngSubmit)="submit(f)" (keyup)="pascheck(f)">
-    <ion-item>  
-      <ion-input
-      minlength="3"
-      required
-      type="text"
-      ngModel
-      #user="ngModel"p
-      (keyup)="log(user)"
-      name="username"
-      placeholder="username"></ion-input>
-    </ion-item>
-    <ion-item>  
-      <ion-input
-      minlength="3"
-      required
-      type="text"
-      ngModel
-      #user="ngModel"p
-      name="username"
-      placeholder="username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input
-      #email="ngModel"
-      required
-      type="email" 
-      ngModel 
-      name="email" 
-      placeholder="Email Input"
-      ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input
-      minlength="3"
-      required
-      type="password" 
-      ngModel
-      [class.ng-invalid]="button"
-      name="password" 
-      placeholder="Password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <div>password incorect</div>
-      <ion-input
-      required
-      type="password" 
-      ngModel
-      #pass2
-      [class.invalid]="button"
-      name="password2"
-      placeholder="Repeate Password"></ion-input>
-    </ion-item>
-    <!-- <h4 *ngIf="!user.valid && user.touched">user not valid</h4> -->
-    <!-- <h4 *ngIf="!email.valid && email.touched">email not valid</h4>s -->
-  <button ion-button full (click)="register()" [disabled]="!f.valid && !button" id="button">register</button>
+<form [formGroup]="form" (keyup)="log()">
+  <ion-item></ion-item>
+  <ion-item>
+    <ion-label floating>username</ion-label>
+    <ion-input formControlName="username" type="text"></ion-input>
+  </ion-item>
+  <div *ngIf="username.invalid && username.touched">
+    <div *ngIf="username.errors.required" class="error">
+      username is required
+    </div>
+    <div *ngIf="username.errors.minlength" class="error">
+      username length must be minimum 3 characters
+    </div>
+    <div *ngIf="username.errors.cannotContainSpace" class="error">
+      username cannot contane space
+    </div>
 
-  </form>
+  </div>
+
+  <ion-item>
+    <ion-label floating>email</ion-label>
+    <ion-input formControlName="email" type="text"></ion-input>
+  </ion-item>
+  <div *ngIf="email.invalid && email.touched" class="error">
+    email is invalid
+  </div>
+
+  <ion-item>
+    <ion-label floating>password</ion-label>
+    <ion-input formControlName="password" type="password"></ion-input>
+  </ion-item>
+
+</form>
+<br>
+<div>
+  {{form.value | json}}
+</div>
+<button ion-button full (click)="register()" id="button">register</button>

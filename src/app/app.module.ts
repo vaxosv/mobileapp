@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
 import { PostsComponent } from '../components/posts/posts';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpProvider } from '../providers/sign-up/sign-up';
 
 @NgModule({
@@ -28,7 +28,8 @@ import { SignUpProvider } from '../providers/sign-up/sign-up';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
