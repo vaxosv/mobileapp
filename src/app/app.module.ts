@@ -14,6 +14,20 @@ import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
 import { PostsComponent } from '../components/posts/posts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpProvider } from '../providers/sign-up/sign-up';
+import * as firebase from 'firebase'
+
+
+var config = {
+  apiKey: "AIzaSyAlcjdCQWVzYg7377vFj9Jf48clvEgcfAQ",
+  authDomain: "fir-aa424.firebaseapp.com",
+  databaseURL: "https://fir-aa424.firebaseio.com",
+  projectId: "fir-aa424",
+  storageBucket: "fir-aa424.appspot.com",
+  messagingSenderId: "9785689179"
+};
+firebase.initializeApp(config);
+
+
 
 @NgModule({
   declarations: [

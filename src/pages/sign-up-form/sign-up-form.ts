@@ -47,5 +47,8 @@ export class SignUpFormPage {
     console.log(this.form);
     
   }
-
+  register(){
+    console.log('sending data to server');
+    
+  }
 }

@@ -20,7 +20,7 @@
       username length must be minimum 3 characters
     </div>
     <div *ngIf="username.errors.cannotContainSpace" class="error">
-      username cannot contane space
+      cannot contane space
     </div>
 
   </div>
@@ -39,8 +39,4 @@
   </ion-item>
 
 </form>
-<br>
-<div>
-  {{form.value | json}}
-</div>
 <button ion-button full (click)="register()" id="button">register</button>
