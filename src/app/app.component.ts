@@ -21,7 +21,7 @@ export class MyApp {
       if (this.loggdin) {
         this.rootPage = UserPage;
       } else {
-        this.rootPage = SignUpFormPage;
+        this.rootPage = WelcomePage;
       }
       statusBar.styleDefault();
       splashScreen.hide();
@@ -35,4 +35,3 @@ export class MyApp {
     const root = this.app.navPop()
   }
 }
-
