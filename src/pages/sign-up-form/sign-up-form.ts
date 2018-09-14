@@ -4,6 +4,8 @@ import { HomePage } from '../home/home';
 import { SignUpProvider } from '../../providers/sign-up/sign-up';
 import { User } from '../../components/user/user';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase';
 
 
 @IonicPage()
@@ -12,7 +14,12 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
   templateUrl: 'sign-up-form.html',
 })
 export class SignUpFormPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams, public signup: SignUpProvider) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public signup: SignUpProvider
+  ) {
   }
 
   //validation
@@ -54,6 +61,22 @@ export class SignUpFormPage {
 
   }
   register() {
-  }
+    this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider())
+      .then(function (result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+      }).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+      }
 
+  }
 }

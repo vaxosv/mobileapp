@@ -14,10 +14,11 @@ import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
 import { PostsComponent } from '../components/posts/posts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpProvider } from '../providers/sign-up/sign-up';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../env/env';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -36,8 +37,9 @@ import { environment } from '../env/env';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
+    AngularFirestoreModule, 
+    AngularFireAuthModule, 
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
