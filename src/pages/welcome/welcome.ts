@@ -25,7 +25,7 @@ export class WelcomePage {
   }
 
   loadLogin(){
-    // this.navCtrl.push(HomePage)
+    this.navCtrl.push(HomePage)
     
   }
 

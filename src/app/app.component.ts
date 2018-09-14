@@ -15,6 +15,8 @@ export class MyApp {
   loggdin: boolean = false
 
   constructor(public app: App, public appCtrl: App, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

@@ -14,19 +14,10 @@ import { SignUpFormPage } from '../pages/sign-up-form/sign-up-form';
 import { PostsComponent } from '../components/posts/posts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpProvider } from '../providers/sign-up/sign-up';
-import * as firebase from 'firebase'
-
-
-var config = {
-  apiKey: "AIzaSyAlcjdCQWVzYg7377vFj9Jf48clvEgcfAQ",
-  authDomain: "fir-aa424.firebaseapp.com",
-  databaseURL: "https://fir-aa424.firebaseio.com",
-  projectId: "fir-aa424",
-  storageBucket: "fir-aa424.appspot.com",
-  messagingSenderId: "9785689179"
-};
-firebase.initializeApp(config);
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../env/env';
 
 
 @NgModule({
@@ -43,7 +34,10 @@ firebase.initializeApp(config);
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,9 +50,9 @@ firebase.initializeApp(config);
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     FetchdataProvider,
     SignUpProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
